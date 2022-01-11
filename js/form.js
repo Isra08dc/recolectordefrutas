@@ -16,10 +16,13 @@ class Form {
   
     display(){
       this.title.html("Fruit Catcher");
-      this.title.position(displayWidth/2 - 50, 0);
+      //this.title.position(displayWidth/2 - 50, 0);
+      this.title.position(350, 50);
   
-      this.input.position(displayWidth/2 - 40 , displayHeight/2 - 80);
-      this.button.position(displayWidth/2 + 30, displayHeight/2);
+      //this.input.position(displayWidth/2 - 40 , displayHeight/2 - 80);
+      this.input.position(550,400);
+      //this.button.position(displayWidth/2 + 30, displayHeight/2);
+      this.button.position(550,500);
       this.reset.position(displayWidth-100,20);
   
       this.button.mousePressed(()=>{
@@ -37,6 +40,9 @@ class Form {
       this.reset.mousePressed(()=>{
         player.updateCount(0);
         game.update(0);
+var playerInfoRef=database.ref('players');
+playerInfoRef.remove();
+        
       });
   
     }

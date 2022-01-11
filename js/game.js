@@ -61,7 +61,10 @@ class Game{
                        text(allPlayers[plr].name,x-25,y+25);
 
                      }
-                    
+                    textSize(20);
+                    fill("red");
+                    text("player 1:"+ allPlayers.player1.score,50,50)
+                    text("player 2:"+ allPlayers.player2.score,50,100)
                       
                  
                  }
@@ -85,13 +88,13 @@ class Game{
                      switch(rand){
                          case 1: fruits.addImage("fruit1",fruit1_img);
                          break;
-                         case 2: fruits.addImage("fruit1", fruit2_img);
+                         case 2: fruits.addImage("fruit2", fruit2_img);
                          break;
-                         case 3: fruits.addImage("fruit1", fruit3_img);
+                         case 3: fruits.addImage("fruit3", fruit3_img);
                          break;
-                         case 4: fruits.addImage("fruit1", fruit4_img);
+                         case 4: fruits.addImage("fruit4", fruit4_img);
                          break;
-                         case 5: fruits.addImage("fruit1", fruit5_img);
+                         case 5: fruits.addImage("fruit5", fruit5_img);
                          break;
                      }
                      fruitGroup.add(fruits);
@@ -102,7 +105,8 @@ class Game{
                     for (var i = 0; i < fruitGroup.length; i++) {
                         if (fruitGroup.get(i).isTouching(players)) {
                             fruitGroup.get(i).destroy();
-                         
+                         player.score=player.score+1;
+                         player.update();
                             
                         }
                         
